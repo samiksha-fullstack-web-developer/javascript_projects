@@ -32,7 +32,7 @@
 
         //show user as radion button
         users.forEach((u,i)=>{
-            usersdiv.innerHTML  `<label><input type="radio" name="user" value="${u.accoumtNumbers} ${i == 0 ? "checked" : " "}">${u.name} (${u.accoumtNumbers})</label><br>`;
+            usersdiv.innerHTML  `<label><input type="radio" name="user" value="${u.accoumtNumbers} ${i === 0 ? "checked" : " "}">${u.name} (${u.accoumtNumbers})</label><br>`;
         })
     </script>
 </body>
