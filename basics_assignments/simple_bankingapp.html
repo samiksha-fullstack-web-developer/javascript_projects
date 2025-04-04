@@ -21,9 +21,9 @@
     </div>
     <script>
         const users =[
-            {name: "Arun", accoumtNumbers: 1246755655, balance:2500},
-            {name: "Ram", accoumtNumbers: 214557878, balance:2800},
-            {name: "Arun", accoumtNumbers: 545675222, balance:200},
+            {name: "Arun", accountNumbers: 1246755655, balance:2500},
+            {name: "Ram", accountNumbers: 214557878, balance:2800},
+            {name: "Arun", accountNumbers: 545675222, balance:200},
         ];
 
         const usersdiv = document.getElementById("users");
@@ -31,15 +31,18 @@
 
 
         //show user as radion button
-        users.forEach((u,i)=>{
-            usersdiv.innerHTML = `<label><input type="radio" name="user" value="${u.accoumtNumbers} ${i === 0 ? "checked" : ""}">${u.name} (${u.accoumtNumbers})</label><br>`;
+        users.forEach((u, i)=>{
+            usersdiv.innerHTML += `<label><input type="radio" name="user" value="${u.accountNumbers}" ${i === 0 ? "checked" : ""}>
+${u.name} (${u.accountNumbers})</label><br>`;
         })
+  
 
         //get selected user
 
         function getuser(){
             const accountNo = document.querySelector('input[name="user"]:checked').value;
-            return users.find(u => u.accountNumbers == accountNo);
+             return users.find(u => u.accountNumbers == accountNo) || null;
+
         }
          
         //output 
