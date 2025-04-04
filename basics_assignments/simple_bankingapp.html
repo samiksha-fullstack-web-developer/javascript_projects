@@ -8,11 +8,13 @@
 <body>
     <div class="container">
         <h2>Simple Banking App</h2>
-        <p id="details"></p>
-     <label for="deposit">Deposit:</label><br>
-     <input type="text" name="deposit" id="deposit"><br>
+        <label>Select Account:</label>
+        <select name="accountselect" id="accountselect"></select>
+     <label for="amount">Enter Amount:</label><br>
+     <input type="text" name="amount" id="amount"><br>
      <button onclick="dpst">Deposit</button><br><br>
-
+     <button onclick="wthdr">Withdraw</button><br><br>
+     <p id="output"></p>
     </div>
 </body>
 </html>
