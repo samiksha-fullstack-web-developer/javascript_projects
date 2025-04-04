@@ -41,8 +41,19 @@
             const accountNo = document.querySelector('input[name:"user"]:checked').value;
             return user.find(u.accoumtNumbers === accountNo)
         }
+         
+        //output 
 
+        function showInfo(){
+            const u = getuser()
+            output.innerHTML = `Name: ${u.name}<br> Account Number: ${u.accoumtNumbers}<br> Balance: ${u.balance}`;
+        }
 
+        //deposit 
+
+        function dpst(){
+            const amt= document.getElementById('amount')
+        }
 
     </script>
 </body>
