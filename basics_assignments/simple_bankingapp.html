@@ -26,34 +26,57 @@
             {name: "Arun", accoumtNumbers: 545675222, balance:200},
         ];
 
-        const usersdiv = document.getElementById(users);
-        const output = document.getElementById(output);
+        const usersdiv = document.getElementById("users");
+        const output = document.getElementById("output");
 
 
         //show user as radion button
         users.forEach((u,i)=>{
-            usersdiv.innerHTML  `<label><input type="radio" name="user" value="${u.accoumtNumbers} ${i === 0 ? "checked" : " "}">${u.name} (${u.accoumtNumbers})</label><br>`;
+            usersdiv.innerHTML = `<label><input type="radio" name="user" value="${u.accoumtNumbers} ${i === 0 ? "checked" : ""}">${u.name} (${u.accoumtNumbers})</label><br>`;
         })
 
         //get selected user
 
         function getuser(){
-            const accountNo = document.querySelector('input[name:"user"]:checked').value;
-            return user.find(u.accoumtNumbers === accountNo)
+            const accountNo = document.querySelector('input[name="user"]:checked').value;
+            return users.find(u => u.accountNumbers == accountNo);
         }
          
         //output 
 
         function showInfo(){
             const u = getuser()
-            output.innerHTML = `Name: ${u.name}<br> Account Number: ${u.accoumtNumbers}<br> Balance: ${u.balance}`;
+            output.innerHTML = `Name: ${u.name}<br> Account Number: ${u.accountNumbers}<br> Balance: ${u.balance}`;
         }
 
         //deposit 
 
         function dpst(){
-            const amt= document.getElementById('amount')
+            const amt = parseFloat(document.getElementById('amount').value);
+            const u = getuser();
+            if(amt>0){
+                u.balance += amt;
+                output.innerHTML = `₹${amt} deposited`
+                showInfo()
+            }else{
+                output.innerHTML = "Enter a Vaild amoount"
+            }
         }
+        function wthdr(){
+    const amt = parseFloat(document.getElementById('amount').value);
+    const u = getuser();
+
+    if(amt <= 0) {
+        output.innerHTML = " Enter a valid withdrawal amount.";
+    } else if(amt > u.balance) {
+        output.innerHTML = " Insufficient balance.";
+    } else {
+        u.balance -= amt;
+        output.innerHTML = ` ₹${amt} withdrawn.`;
+        showInfo();
+    }
+}
+
 
     </script>
 </body>
