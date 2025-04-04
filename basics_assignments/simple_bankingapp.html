@@ -11,13 +11,25 @@
     <div class="container">
         <h2>Simple Banking App</h2>
         <label>Select Account:</label>
-        <select name="accountselect" id="accountselect"></select>
+        <div id="users"></div>
         <label for="amount">Enter Amount:</label><br>
+        <button onclick="showInfo()">Show Account Info</button>
         <input type="text" name="amount" id="amount"><br>
-        <button onclick="dpst">Deposit</button><br><br>
-        <button onclick="wthdr">Withdraw</button><br><br>
+        <button onclick="dpst()">Deposit</button><br><br>
+        <button onclick="wthdr()">Withdraw</button><br><br>
         <p id="output"></p>
     </div>
+    <script>
+        const users =[
+            {name: "Arun", accoumtNumbers: 1246755655, balance:2500},
+            {name: "Ram", accoumtNumbers: 214557878, balance:2800},
+            {name: "Arun", accoumtNumbers: 545675222, balance:200},
+
+        ];
+        const usersdiv = document.getElementById(users);
+        const output = document.getElementById(output);
+        
+    </script>
 </body>
 
 </html>
