@@ -35,11 +35,15 @@
             usersdiv.innerHTML  `<label><input type="radio" name="user" value="${u.accoumtNumbers} ${i === 0 ? "checked" : " "}">${u.name} (${u.accoumtNumbers})</label><br>`;
         })
 
-        //getuser
+        //get selected user
 
         function getuser(){
-            
+            const accountNo = document.querySelector('input[name:"user"]:checked').value;
+            return user.find(u.accoumtNumbers === accountNo)
         }
+
+
+
     </script>
 </body>
 
