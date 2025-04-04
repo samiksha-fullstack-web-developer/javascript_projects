@@ -24,8 +24,8 @@
             {name: "Arun", accoumtNumbers: 1246755655, balance:2500},
             {name: "Ram", accoumtNumbers: 214557878, balance:2800},
             {name: "Arun", accoumtNumbers: 545675222, balance:200},
-
         ];
+
         const usersdiv = document.getElementById(users);
         const output = document.getElementById(output);
 
@@ -34,6 +34,12 @@
         users.forEach((u,i)=>{
             usersdiv.innerHTML  `<label><input type="radio" name="user" value="${u.accoumtNumbers} ${i === 0 ? "checked" : " "}">${u.name} (${u.accoumtNumbers})</label><br>`;
         })
+
+        //getuser
+
+        function getuser(){
+            
+        }
     </script>
 </body>
 
